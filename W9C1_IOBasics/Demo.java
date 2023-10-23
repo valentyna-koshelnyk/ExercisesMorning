@@ -142,17 +142,18 @@ public class Demo {
 
     //Exercise 3: Appending to a File
 
+
     public void appendFile()  throws IOException {
-        File file = new File("append.txt");
-        FileWriter fr = new FileWriter(file, true);
-        BufferedWriter br = new BufferedWriter(fr);
-        br.write("data");
+        String fileName = "append.txt";
+        String textToAppend = "data";
 
-        br.close();
-        fr.close();
-
+        try (FileWriter fw = new FileWriter(fileName, true);
+             BufferedWriter bw = new BufferedWriter(fw)) {
+            bw.write(textToAppend);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
     //Exercise 4: Reading a Properties File
 public void readProperties() {
     Properties prop = new Properties();
