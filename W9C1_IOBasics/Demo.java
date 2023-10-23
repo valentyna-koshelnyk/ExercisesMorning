@@ -29,8 +29,8 @@ public class Demo {
         System.out.println("What's your name?");
         String name = sc.nextLine();
         StringBuilder sb = new StringBuilder("Hello ");
+        sb.append(name);
         sc.close();
-        System.out.println(sb.append(name);
 
     }
 
@@ -123,7 +123,6 @@ public class Demo {
 
     public void getInputExit() throws FileNotFoundException{
         File file = new File("pathToFile");
-        Scanner scanner = new Scanner(file);
 
         try (Scanner scanner = new Scanner(file)) {
             List<String>userInp = new ArrayList<>();
@@ -137,7 +136,6 @@ public class Demo {
             System.out.println("No file found: " + "pathToFile");
         }
 
-        scanner.close();
     }
 
     //Exercise 3: Appending to a File
@@ -150,6 +148,7 @@ public class Demo {
         try (FileWriter fw = new FileWriter(fileName, true);
              BufferedWriter bw = new BufferedWriter(fw)) {
             bw.write(textToAppend);
+            String originalContent;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -168,14 +167,8 @@ public void readProperties() {
         String input2 = prop.getProperty("inputTwo");
 
         propMap.put(input1, input2);
-    } catch (IOException e) {
-        if (input != null) {
-            try {
-                input.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+    } catch (IOException e){
+        e.printStackTrace();
     }
 }
   // Exercise 5: Creating Directories
