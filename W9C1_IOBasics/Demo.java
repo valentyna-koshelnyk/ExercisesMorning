@@ -2,6 +2,7 @@ package W9C1_IOBasics;
 
 import java.io.*;
 import java.nio.file.Path;
+import java.sql.Array;
 import java.sql.SQLOutput;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -16,6 +17,7 @@ public class Demo {
     // Exercise 1: Reading from the Console
 
     public void readFromConsole(){
+        System.out.println("Say something: ");
         String string = sc.nextLine();
         System.out.println(string);
         sc.close();
@@ -36,11 +38,20 @@ public class Demo {
 
     // possible exception
 
-    public void readFiles(){
-        Reader reader = new FileReader("input.txt");
-        Writer writer = new FileWriter("output.txt");
+    public void readFiles() {
+        try {
+            Reader reader = new FileReader("input.txt");
+            Writer writer = new FileWriter("output.txt");
+            {
+                int c;
+                while ((c = reader.read()) != - 1) {
+                    writer.write(c);
+                }
+            }
 
-
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
     // Exercise 4: Copying a File
@@ -67,15 +78,19 @@ public class Demo {
 
     // Exercise 5: Reading and Writing CSV Files
     public void csvReader(){
-        BufferedReader br = new BufferedReader(new InputStreamReader("fileName"));
-
-        Object LinkedList;
-        List<List<String>> dataList = br.lines()
-                .map(k -> Arrays.asList(k.split(",")))
-                .collect(Collectors.toCollection(LinkedList::new));
-
-
+    try
+            (BufferedReader br = new BufferedReader(new FileReader("fileName"))) {
+        String line;
+        while (( line = br.readLine()) != null){
+            System.out.println(line);
+        } }
+    catch (IOException e){
+        System.out.println("Error: " + e.getMessage());
     }
+    }
+
+
+
 
   // Exercise 1: Counting Words in a File
 
@@ -102,13 +117,21 @@ public class Demo {
 
     // Exercise 2: Reading User Input until 'Exit'
 
+ //   Bonus: Store all the entered strings in an ArrayList and, upon exit,
+    //   write all the strings to a file named "userInputs.txt".
+
+
     public void getInputExit() throws FileNotFoundException{
         File file = new File("pathToFile");
         Scanner scanner = new Scanner(file);
 
         try (Scanner scanner = new Scanner(file)) {
+            List<String>userInp = new ArrayList<>();
+
             while (scanner.hasNext()) {
-                System.out.print(scanner.nextLine() + " ");
+                String line = scanner.nextLine();
+                System.out.print(line + " ");
+                userInp.add(line);
             }
         } catch (FileNotFoundException e) {
             System.out.println("No file found: " + "pathToFile");
