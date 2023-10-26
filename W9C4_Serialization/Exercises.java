@@ -66,10 +66,10 @@ public class Exercises {
             address = ois.readUTF();
         }
 
-        @Override
-        public void writeObject(ObjectOutputStream oos) throws IOException{
-            StringBuilder sb = new StringBuilder();
-            name =
+//        @Override
+//        public void writeObject(ObjectOutputStream oos) throws IOException{
+//            StringBuilder sb = new StringBuilder();
+//            name =
 
 
 
