@@ -57,19 +57,17 @@ public class Exercises {
             return new StringBuilder(str).reverse().toString();
         }
         @Override
-        private void readObject(ObjectInputStream ois) throws ClassNotFoundException, IOException
+        private void writeObject(ObjectOutputStream oos) throws ClassNotFoundException, IOException
         {
-            StringBuilder sb = new StringBuilder();
-            name = ois.readUTF();
-            name = reverseString(name);
-            age = ois.readInt();
-            address = ois.readUTF();
+          oos.defaultWriteObject();
+         oos.writeObject(reverseString(name));
         }
 
-//        @Override
-//        public void writeObject(ObjectOutputStream oos) throws IOException{
-//            StringBuilder sb = new StringBuilder();
-//            name =
+        private void readObject(ObjectInputStream ois) throws ClassNotFoundException, IOException{
+            ois.defaultReadObject();
+            name = reverseString((String).ois.readObject());
+
+
 
 
 

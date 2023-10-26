@@ -112,15 +112,25 @@ public class Exercises {
         return lines;
     }
 
+    public static void openF() throws IOException {
+        try (FileReader fr = new FileReader("W9C2IOStreams/dataset_91022.txt")) {
+            int y;
+            while ((y = fr.read()) != -1) {
+                System.out.print((char) y);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
 
-    public static void main(String[] args) {
-       copyBinaryInputOutputStream();
+    public static void main(String[] args) throws IOException {
+      // copyBinaryInputOutputStream();
       //  csvReader();
        // readChunks();
-
+        openF();
     }
 
 }
