@@ -14,6 +14,8 @@ public class Exercises {
         private String name;
         private int age;
         private Address address;
+        private transient LocalDateTime currentDateTime;
+
         private static final long serialVersionUID = 1L;
 
 
@@ -113,7 +115,6 @@ public class Exercises {
         private String city;
         private String street;
 
-        transient private LocalDateTime currentDateTime;
 
         public void setCountry(String country) {
             this.country = country;
