@@ -56,22 +56,22 @@ public class Exercises {
         private String reverseString(String str) {
             return new StringBuilder(str).reverse().toString();
         }
-        @Override
-        private void writeObject(ObjectOutputStream oos) throws ClassNotFoundException, IOException
-        {
-          oos.defaultWriteObject();
-         oos.writeObject(reverseString(name));
-        }
-
-        private void readObject(ObjectInputStream ois) throws ClassNotFoundException, IOException{
-            ois.defaultReadObject();
-            name = reverseString((String).ois.readObject());
-
-
-
-
-
-        }
+//        @Override
+//        private void writeObject(ObjectOutputStream oos) throws ClassNotFoundException, IOException
+//        {
+//          oos.defaultWriteObject();
+//         oos.writeObject(reverseString(name));
+//        }
+//
+//        private void readObject(ObjectInputStream ois) throws ClassNotFoundException, IOException{
+//            ois.defaultReadObject();
+//            name = reverseString((String).ois.readObject());
+//
+//
+//
+//
+//
+//        }
     }
 
 
