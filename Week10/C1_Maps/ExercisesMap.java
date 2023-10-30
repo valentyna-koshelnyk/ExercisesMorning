@@ -2,7 +2,7 @@ package Week10.C1_Maps;
 
 import java.util.*;
 
-public class Exercises {
+public class ExercisesMap {
     public static void main(String[] args) {
 
         //Ex 1.Basic Hashmap;
