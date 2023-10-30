@@ -21,13 +21,13 @@ public class ExercisesSet {
         Set<String> uniqueStrings = new HashSet<>();
         List<String> str = new ArrayList<>(List.of("apple", "banana", "apple", "cherry"));
 
-//        for ( String i: str) {
-//            uniqueStrings.add(i);
-//        }
-//        Iterator<String> iterator = uniqueStrings.iterator();
-//        while (iterator.hasNext()) {
-//            System.out.println(iterator.next());
-//        }
+        for ( String i: str) {
+            uniqueStrings.add(i);
+        }
+        Iterator<String> iterator = uniqueStrings.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
 
         //Ex.3 TreeSet with Natureal Ordering
 
@@ -37,12 +37,12 @@ public class ExercisesSet {
         sortedSet.add(4);
         sortedSet.add(567);
 
-//        System.out.println(sortedSet);
+        System.out.println(sortedSet);
 
-//        Iterator<Integer> iteratorInt = sortedSet.iterator();
-//        while (iteratorInt.hasNext()){
-//            System.out.println(iteratorInt.next());
-//        }
+        Iterator<Integer> iteratorInt = sortedSet.iterator();
+        while (iteratorInt.hasNext()){
+            System.out.println(iteratorInt.next());
+        }
         Set<Person> personSet = new TreeSet<>();
         Person personOne = new Person("Olivia", 1);
         Person personTwo = new Person("Jean", 18);

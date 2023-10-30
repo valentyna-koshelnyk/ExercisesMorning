@@ -1,10 +1,7 @@
 package W9C5_Deserialization;
 import SerializationUtils.SerializationUtils;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.NotSerializableException;
-import java.io.Serializable;
+import java.io.*;
 
 public class Person implements Serializable {
     public Person(String name, int age, int salary) {
@@ -58,3 +55,4 @@ public class Person implements Serializable {
 
     }
 }
+
